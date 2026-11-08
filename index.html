@@ -1,807 +1,208 @@
 <!doctype html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fauzi Rafi Abimanyu Nugraha — Portofolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fauzi Rafi Abimanyu Nugraha | Portofolio</title>
     <meta
       name="description"
-      content="Portofolio Fauzi Rafi Abimanyu Nugraha — Mahasiswa D4 Teknik Informatika Politeknik Negeri Jember. Web development, basis data, dan quality assurance."
+      content="Portofolio Fauzi Rafi Abimanyu Nugraha, mahasiswa D4 Teknik Informatika Politeknik Negeri Jember."
     />
-
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0a0a%22/><text x=%2250%22 y=%2268%22 font-size=%2254%22 font-family=%22system-ui%22 font-weight=%22700%22 fill=%22%23fbbf24%22 text-anchor=%22middle%22>F</text></svg>"
-    />
-
-    <!-- Theme init: HARUS sebelum body render untuk hindari flash -->
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem("theme");
-          if (saved === "light") {
-            document.documentElement.classList.add("light");
-          } else if (saved === "dark") {
-            // default sudah dark
-          } else if (
-            window.matchMedia("(prefers-color-scheme: light)").matches
-          ) {
-            document.documentElement.classList.add("light");
-          }
-        } catch (e) {}
-      })();
-    </script>
-
+    <meta name="theme-color" content="#111315" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400&display=swap"
       rel="stylesheet"
     />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "system-ui", "sans-serif"],
-              display: ['"Space Grotesk"', "system-ui", "sans-serif"],
-              mono: ['"JetBrains Mono"', "monospace"],
-            },
-            colors: {
-              // Theme-aware palette via CSS variables
-              theme: "rgb(var(--bg) / <alpha-value>)",
-              surface: "rgb(var(--surface) / <alpha-value>)",
-              content: "rgb(var(--text) / <alpha-value>)",
-              muted: "rgb(var(--text-muted) / <alpha-value>)",
-              dim: "rgb(var(--text-dim) / <alpha-value>)",
-              accent: {
-                DEFAULT: "rgb(var(--accent) / <alpha-value>)",
-                hover: "rgb(var(--accent-hover) / <alpha-value>)",
-                fg: "rgb(var(--accent-fg) / <alpha-value>)",
-              },
-              line: {
-                DEFAULT: "rgb(var(--border) / <alpha-value>)",
-                soft: "rgb(var(--border-soft) / <alpha-value>)",
-              },
-            },
-          },
-        },
-      };
-    </script>
-
-    <style>
-      /* =========================================================
-       Theme palette — dark (default) & light
-       ========================================================= */
-      :root {
-        --bg: 10 10 10;
-        --surface: 24 24 27;
-        --border: 24 24 27;
-        --border-soft: 39 39 42;
-        --text: 244 244 245;
-        --text-muted: 161 161 170;
-        --text-dim: 113 113 122;
-        --accent: 251 191 36;
-        --accent-hover: 252 211 77;
-        --accent-fg: 0 0 0;
-      }
-
-      html.light {
-        --bg: 250 250 249;
-        --surface: 255 255 255;
-        --border: 231 229 228;
-        --border-soft: 214 211 209;
-        --text: 12 10 9;
-        --text-muted: 87 83 78;
-        --text-dim: 120 113 108;
-        --accent: 217 119 6;
-        --accent-hover: 180 83 9;
-        --accent-fg: 255 255 255;
-      }
-
-      body {
-        background-color: rgb(var(--bg));
-        color: rgb(var(--text));
-      }
-
-      /* Theme-transition (saat toggle, warna berubah smooth) */
-      html.theme-transitioning *,
-      html.theme-transitioning *::before,
-      html.theme-transitioning *::after {
-        transition:
-          background-color 0.25s ease,
-          color 0.25s ease,
-          border-color 0.25s ease,
-          fill 0.25s ease !important;
-      }
-
-      /* Reveal-on-scroll */
-      [data-reveal] {
-        opacity: 0;
-        transform: translateY(24px);
-        transition:
-          opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-          transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-      [data-reveal].is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Cursor typing */
-      @keyframes blink {
-        0%,
-        49% {
-          opacity: 1;
-        }
-        50%,
-        100% {
-          opacity: 0;
-        }
-      }
-      .typed-cursor {
-        display: inline-block;
-        width: 2px;
-        height: 1em;
-        vertical-align: text-bottom;
-        background-color: rgb(var(--accent));
-        margin-left: 4px;
-        animation: blink 1s steps(1) infinite;
-      }
-
-      /* Certificates: smooth filter hide */
-      #certs-list li {
-        transition: opacity 0.2s ease;
-      }
-      #certs-list li.is-hidden {
-        display: none;
-      }
-
-      ::selection {
-        background: rgb(var(--accent));
-        color: rgb(var(--accent-fg));
-      }
-
-      /* Scrollbar */
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-      ::-webkit-scrollbar-track {
-        background: rgb(var(--bg));
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgb(var(--border-soft));
-        border-radius: 999px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgb(var(--text-dim));
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        [data-reveal] {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-        .typed-cursor {
-          animation: none;
-        }
-        html {
-          scroll-behavior: auto;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body class="font-sans antialiased overflow-x-hidden">
-    <!-- Scroll progress bar -->
-    <div
-      id="scroll-progress"
-      class="fixed top-0 left-0 h-[2px] bg-accent z-[60] transition-[width] duration-75"
-      style="width: 0%"
-    ></div>
-
-    <!-- ============ NAV ============ -->
-    <header
-      id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent"
-    >
-      <nav
-        class="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between"
-      >
-        <a
-          href="#top"
-          class="font-display font-semibold text-lg tracking-tight"
+  <body>
+    <header class="site-header" id="top">
+      <div class="wrap header-inner">
+        <a href="#top" class="brand" aria-label="Fauzi Rafi"
+          >fauzi<span>.rafi</span></a
         >
-          Fauzi<span class="text-accent">.</span>
-        </a>
 
-        <!-- Desktop links -->
-        <ul class="hidden md:flex items-center gap-8 text-sm text-muted">
-          <li>
-            <a
-              href="#about"
-              class="nav-link hover:text-content transition-colors"
-              >Tentang</a
-            >
-          </li>
-          <li>
-            <a
-              href="#experience"
-              class="nav-link hover:text-content transition-colors"
-              >Pengalaman</a
-            >
-          </li>
-          <li>
-            <a
-              href="#projects"
-              class="nav-link hover:text-content transition-colors"
-              >Proyek</a
-            >
-          </li>
-          <li>
-            <a
-              href="#skills"
-              class="nav-link hover:text-content transition-colors"
-              >Keahlian</a
-            >
-          </li>
-          <li>
-            <a
-              href="#certifications"
-              class="nav-link hover:text-content transition-colors"
-              >Sertifikasi</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contact"
-              class="ml-2 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-fg text-sm font-medium hover:bg-accent-hover transition-colors"
-            >
-              Hubungi
-            </a>
-          </li>
-        </ul>
+        <nav class="nav" id="nav" aria-label="Navigasi utama">
+          <a href="#tentang" data-i18n="nav_about">Tentang</a>
+          <a href="#keahlian" data-i18n="nav_skills">Keahlian</a>
+          <a href="#pendidikan" data-i18n="nav_edu">Pendidikan</a>
+          <a href="#pengalaman" data-i18n="nav_exp">Pengalaman</a>
+          <a href="#proyek" data-i18n="nav_projects">Proyek</a>
+          <a href="#sertifikat" data-i18n="nav_certs">Sertifikat</a>
+          <a href="#kontak" data-i18n="nav_contact">Kontak</a>
+        </nav>
 
-        <!-- Actions: theme toggle + mobile menu -->
-        <div class="flex items-center gap-2">
+        <div class="header-actions">
+          <div class="lang" role="group" aria-label="Bahasa / Language">
+            <button type="button" data-lang="id" class="is-active">ID</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
           <button
-            id="theme-toggle"
-            aria-label="Ganti tema"
-            class="w-10 h-10 rounded-full border border-line flex items-center justify-center hover:border-accent/50 transition-colors"
-          >
-            <!-- Moon icon (terlihat di dark mode → klik untuk light) -->
-            <svg
-              id="icon-sun"
-              class="w-[18px] h-[18px] text-dim hover:text-accent transition-colors"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <circle cx="12" cy="12" r="4" />
-              <path
-                stroke-linecap="round"
-                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-              />
-            </svg>
-            <!-- Sun icon (terlihat di light mode → klik untuk dark) -->
-            <svg
-              id="icon-moon"
-              class="w-[18px] h-[18px] text-dim hover:text-accent transition-colors hidden"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-              />
-            </svg>
-          </button>
-
-          <button
-            id="menu-toggle"
-            aria-label="Buka menu"
+            type="button"
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Menu"
             aria-expanded="false"
-            class="md:hidden p-2 -mr-2 text-muted hover:text-content"
+            aria-controls="nav"
           >
-            <svg
-              id="icon-menu"
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-            <svg
-              id="icon-close"
-              class="w-6 h-6 hidden"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 6l12 12M18 6L6 18"
-              />
-            </svg>
+            <span></span><span></span>
           </button>
         </div>
-      </nav>
-
-      <!-- Mobile menu -->
-      <div
-        id="mobile-menu"
-        class="md:hidden hidden border-t border-line bg-theme/95 backdrop-blur-lg"
-      >
-        <ul class="px-6 py-4 space-y-1 text-sm">
-          <li>
-            <a
-              href="#about"
-              class="mobile-link block py-2 text-muted hover:text-accent"
-              >Tentang</a
-            >
-          </li>
-          <li>
-            <a
-              href="#experience"
-              class="mobile-link block py-2 text-muted hover:text-accent"
-              >Pengalaman</a
-            >
-          </li>
-          <li>
-            <a
-              href="#projects"
-              class="mobile-link block py-2 text-muted hover:text-accent"
-              >Proyek</a
-            >
-          </li>
-          <li>
-            <a
-              href="#skills"
-              class="mobile-link block py-2 text-muted hover:text-accent"
-              >Keahlian</a
-            >
-          </li>
-          <li>
-            <a
-              href="#certifications"
-              class="mobile-link block py-2 text-muted hover:text-accent"
-              >Sertifikasi</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contact"
-              class="mobile-link block py-2 text-muted hover:text-accent"
-              >Kontak</a
-            >
-          </li>
-        </ul>
       </div>
     </header>
 
-    <main id="top">
-      <!-- ============ HERO ============ -->
-      <section
-        class="relative min-h-screen flex items-center pt-24 pb-16 px-6 md:px-8"
-      >
-        <div
-          class="pointer-events-none absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent/[0.06] blur-[120px]"
-        ></div>
-
-        <div class="max-w-6xl mx-auto w-full relative">
-          <div
-            class="flex items-center gap-3 mb-8 font-mono text-xs text-dim"
-            data-reveal
-          >
-            <span class="relative flex h-2 w-2">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"
-              ></span>
-              <span
-                class="relative inline-flex rounded-full h-2 w-2 bg-accent"
-              ></span>
-            </span>
-            <span id="availability-text"></span>
-          </div>
-
-          <h1
-            class="font-display font-semibold text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mb-6"
-            data-reveal
-          >
-            <span id="hero-name"></span><span class="text-accent">.</span>
-          </h1>
-
-          <!-- Typing animation -->
-          <p
-            class="font-display text-lg md:text-2xl text-muted mb-8 max-w-2xl min-h-[1.8em]"
-            data-reveal
-          >
-            <span id="hero-typed" class="text-content"></span
-            ><span class="typed-cursor" aria-hidden="true"></span>
-          </p>
-
-          <p
-            id="hero-summary"
-            class="text-muted text-base md:text-lg leading-relaxed max-w-2xl mb-10"
-            data-reveal
-          ></p>
-
-          <div class="flex flex-wrap gap-3" data-reveal>
-            <a
-              href="#contact"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-fg font-medium text-sm hover:bg-accent-hover transition-colors"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-text">
+            <p class="eyebrow" data-i18n="hero_eyebrow">Halo, saya</p>
+            <h1>Fauzi Rafi<br />Abimanyu Nugraha</h1>
+            <p class="role" data-i18n="hero_role">
+              Mahasiswa Teknik Informatika &middot; Full Stack &amp; Basis Data
+            </p>
+            <p class="lead" data-i18n="hero_intro">
+              Saya membangun website dan merancang basis data, dan terbiasa
+              memecahkan masalah dari sisi perangkat keras sampai aplikasi.
+            </p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#proyek" data-i18n="btn_projects"
+                >Lihat proyek</a
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              Hubungi saya
-            </a>
-            <a
-              id="btn-download-cv"
-              href="#"
-              download
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line-soft text-content font-medium text-sm hover:border-dim hover:bg-surface transition-colors"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
+              <a class="btn" href="#kontak" data-i18n="btn_contact"
+                >Hubungi saya</a
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"
-                />
-              </svg>
-              Unduh CV
-            </a>
-            <a
-              id="btn-github"
-              href="#"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-line text-muted font-medium text-sm hover:border-dim hover:text-content transition-colors"
-            >
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.06 11.06 0 015.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12v3.14c0 .31.21.67.8.56A11.51 11.51 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"
-                />
-              </svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ ABOUT ============ -->
-      <section
-        id="about"
-        class="py-24 md:py-32 px-6 md:px-8 border-t border-line"
-      >
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-12" data-reveal>
-            <span class="font-mono text-xs text-accent">01 · Tentang</span>
-            <h2
-              class="font-display text-4xl md:text-5xl font-semibold mt-2 tracking-tight"
-            >
-              Siapa saya.
-            </h2>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-12">
-            <div
-              class="md:col-span-2 space-y-5 text-muted leading-relaxed"
-              id="about-text"
-              data-reveal
-            ></div>
-            <div class="space-y-px" id="stats-container" data-reveal></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ EXPERIENCE ============ -->
-      <section
-        id="experience"
-        class="py-24 md:py-32 px-6 md:px-8 border-t border-line"
-      >
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-12" data-reveal>
-            <span class="font-mono text-xs text-accent">02 · Pengalaman</span>
-            <h2
-              class="font-display text-4xl md:text-5xl font-semibold mt-2 tracking-tight"
-            >
-              Yang sudah saya kerjakan.
-            </h2>
-          </div>
-          <ol id="experience-list" class="space-y-4"></ol>
-        </div>
-      </section>
-
-      <!-- ============ PROJECTS ============ -->
-      <section
-        id="projects"
-        class="py-24 md:py-32 px-6 md:px-8 border-t border-line"
-      >
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-12" data-reveal>
-            <span class="font-mono text-xs text-accent">03 · Proyek</span>
-            <h2
-              class="font-display text-4xl md:text-5xl font-semibold mt-2 tracking-tight"
-            >
-              Proyek pilihan.
-            </h2>
-          </div>
-          <div id="projects-grid" class="grid md:grid-cols-2 gap-6"></div>
-        </div>
-      </section>
-
-      <!-- ============ SKILLS ============ -->
-      <section
-        id="skills"
-        class="py-24 md:py-32 px-6 md:px-8 border-t border-line"
-      >
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-12" data-reveal>
-            <span class="font-mono text-xs text-accent">04 · Keahlian</span>
-            <h2
-              class="font-display text-4xl md:text-5xl font-semibold mt-2 tracking-tight"
-            >
-              Yang saya kuasai.
-            </h2>
-          </div>
-          <div id="skills-container" class="grid md:grid-cols-3 gap-6"></div>
-        </div>
-      </section>
-
-      <!-- ============ CERTIFICATIONS ============ -->
-      <section
-        id="certifications"
-        class="py-24 md:py-32 px-6 md:px-8 border-t border-line"
-      >
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-8" data-reveal>
-            <span class="font-mono text-xs text-accent">05 · Sertifikasi</span>
-            <h2
-              class="font-display text-4xl md:text-5xl font-semibold mt-2 tracking-tight"
-            >
-              Sertifikasi &amp; pelatihan.
-            </h2>
-          </div>
-
-          <!-- Filter tahun -->
-          <div
-            id="cert-filters"
-            class="flex flex-wrap gap-2 mb-6"
-            data-reveal
-          ></div>
-
-          <ul
-            id="certs-list"
-            class="divide-y divide-line border-y border-line"
-          ></ul>
-        </div>
-      </section>
-
-      <!-- ============ EDUCATION ============ -->
-      <section
-        id="education"
-        class="py-24 md:py-32 px-6 md:px-8 border-t border-line"
-      >
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-12" data-reveal>
-            <span class="font-mono text-xs text-accent">06 · Pendidikan</span>
-            <h2
-              class="font-display text-4xl md:text-5xl font-semibold mt-2 tracking-tight"
-            >
-              Latar pendidikan.
-            </h2>
-          </div>
-          <div id="education-list" class="space-y-6"></div>
-        </div>
-      </section>
-
-      <!-- ============ CONTACT ============ -->
-      <section
-        id="contact"
-        class="py-24 md:py-32 px-6 md:px-8 border-t border-line"
-      >
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-12" data-reveal>
-            <span class="font-mono text-xs text-accent">07 · Kontak</span>
-            <h2
-              class="font-display text-5xl md:text-7xl font-semibold mt-2 tracking-tight leading-none"
-            >
-              Mari <span class="text-accent">terhubung.</span>
-            </h2>
-          </div>
-
-          <p
-            class="text-muted text-lg max-w-2xl mb-12 leading-relaxed"
-            data-reveal
-          >
-            Terbuka untuk diskusi teknis, kolaborasi proyek, atau peluang magang
-            di bidang web development, basis data, dan IT support.
-          </p>
-
-          <div class="grid md:grid-cols-2 gap-4 max-w-3xl" data-reveal>
-            <button
-              id="copy-email"
-              class="group text-left p-6 rounded-xl border border-line bg-surface hover:border-accent/50 transition-colors"
-            >
-              <div class="flex items-center justify-between mb-2">
-                <span
-                  class="font-mono text-xs text-dim uppercase tracking-wider"
-                  >Email</span
-                >
-                <svg
-                  class="w-4 h-4 text-dim group-hover:text-accent transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <span
-                class="text-content text-base font-medium"
-                id="contact-email"
-              ></span>
-            </button>
-
-            <a
-              id="contact-wa"
-              href="#"
-              target="_blank"
-              rel="noopener"
-              class="group p-6 rounded-xl border border-line bg-surface hover:border-accent/50 transition-colors block"
-            >
-              <div class="flex items-center justify-between mb-2">
-                <span
-                  class="font-mono text-xs text-dim uppercase tracking-wider"
-                  >WhatsApp</span
-                >
-                <svg
-                  class="w-4 h-4 text-dim group-hover:text-accent transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </div>
-              <span
-                class="text-content text-base font-medium"
-                id="contact-phone"
-              ></span>
-            </a>
-
-            <a
-              id="contact-linkedin"
-              href="#"
-              target="_blank"
-              rel="noopener"
-              class="group p-6 rounded-xl border border-line bg-surface hover:border-accent/50 transition-colors block"
-            >
-              <div class="flex items-center justify-between mb-2">
-                <span
-                  class="font-mono text-xs text-dim uppercase tracking-wider"
-                  >LinkedIn</span
-                >
-                <svg
-                  class="w-4 h-4 text-dim group-hover:text-accent transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </div>
-              <span
-                class="text-content text-base font-medium"
-                id="contact-linkedin-text"
-              ></span>
-            </a>
-
-            <div class="p-6 rounded-xl border border-line bg-surface">
-              <div class="mb-2">
-                <span
-                  class="font-mono text-xs text-dim uppercase tracking-wider"
-                  >Lokasi</span
-                >
-              </div>
-              <span
-                class="text-content text-base font-medium"
-                id="contact-location"
-              ></span>
+              <a
+                class="btn text"
+                id="cvBtn"
+                href="assets/CV-Fauzi-Rafi-Abimanyu-Nugraha.pdf"
+                download
+                data-i18n="btn_cv"
+                >Unduh CV</a
+              >
             </div>
           </div>
+
+          <figure class="photo">
+            <div class="photo-frame">
+              <span class="photo-fallback" aria-hidden="true">FR</span>
+              <img
+                id="photo"
+                src="assets/foto.jpg"
+                alt="Foto Fauzi Rafi Abimanyu Nugraha"
+                width="320"
+                height="400"
+              />
+            </div>
+            <figcaption>Nganjuk &middot; Jember</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- TENTANG -->
+      <section id="tentang" class="section">
+        <div class="wrap">
+          <h2 class="section-title">
+            <span class="idx">[01]</span>
+            <em data-i18n="about_title">Tentang saya</em>
+          </h2>
+          <div class="about-grid">
+            <div class="prose">
+              <p data-i18n="about_p1"></p>
+              <p data-i18n="about_p2"></p>
+              <p data-i18n="about_p3"></p>
+            </div>
+            <dl class="facts" id="facts"></dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- KEAHLIAN -->
+      <section id="keahlian" class="section">
+        <div class="wrap">
+          <h2 class="section-title">
+            <span class="idx">[02]</span>
+            <em data-i18n="skills_title">Keahlian</em>
+          </h2>
+          <div class="skills" id="skills"></div>
+        </div>
+      </section>
+
+      <!-- PENDIDIKAN -->
+      <section id="pendidikan" class="section">
+        <div class="wrap">
+          <h2 class="section-title">
+            <span class="idx">[03]</span>
+            <em data-i18n="edu_title">Pendidikan</em>
+          </h2>
+          <div class="stack" id="education"></div>
+        </div>
+      </section>
+
+      <!-- PENGALAMAN -->
+      <section id="pengalaman" class="section">
+        <div class="wrap">
+          <h2 class="section-title">
+            <span class="idx">[04]</span>
+            <em data-i18n="exp_title">Pengalaman</em>
+          </h2>
+          <ol class="timeline" id="experience"></ol>
+
+          <h3 class="sub-title" data-i18n="org_title">Organisasi</h3>
+          <div class="stack" id="organization"></div>
+        </div>
+      </section>
+
+      <!-- PROYEK -->
+      <section id="proyek" class="section">
+        <div class="wrap">
+          <h2 class="section-title">
+            <span class="idx">[05]</span>
+            <em data-i18n="projects_title">Proyek</em>
+          </h2>
+          <p class="section-note" data-i18n="projects_note">
+            Dua proyek berbasis pembelajaran (Project Based Learning) di kampus.
+          </p>
+          <div class="cards" id="projects"></div>
+        </div>
+      </section>
+
+      <!-- SERTIFIKAT -->
+      <section id="sertifikat" class="section">
+        <div class="wrap">
+          <h2 class="section-title">
+            <span class="idx">[06]</span>
+            <em data-i18n="certs_title">Sertifikasi &amp; pelatihan</em>
+          </h2>
+          <ul class="certs" id="certs"></ul>
+        </div>
+      </section>
+
+      <!-- KONTAK -->
+      <section id="kontak" class="section contact">
+        <div class="wrap">
+          <h2 class="section-title">
+            <span class="idx">[07]</span>
+            <em data-i18n="contact_title">Kontak</em>
+          </h2>
+          <p class="contact-lead" data-i18n="contact_lead">
+            Terbuka untuk magang, kolaborasi proyek, atau sekadar ngobrol soal
+            pengembangan web dan basis data.
+          </p>
+          <ul class="contact-list" id="contactList"></ul>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-line py-8 px-6 md:px-8">
-      <div
-        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-dim font-mono"
-      >
-        <span
-          >© <span id="footer-year"></span> <span id="footer-name"></span
-        ></span>
-        <span
-          >Built with HTML, Tailwind CDN &amp; vanilla JS — no framework.</span
-        >
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>&copy; <span id="year"></span> Fauzi Rafi Abimanyu Nugraha</p>
+        <a href="#top" data-i18n="back_top">Kembali ke atas &uarr;</a>
       </div>
     </footer>
 
-    <!-- Back to top -->
-    <button
-      id="back-to-top"
-      aria-label="Kembali ke atas"
-      class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-accent text-accent-fg flex items-center justify-center shadow-lg opacity-0 translate-y-3 pointer-events-none transition-all duration-300 hover:bg-accent-hover z-40"
-    >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 19V5m0 0l-7 7m7-7l7 7"
-        />
-      </svg>
-    </button>
-
-    <!-- Toast -->
-    <div
-      id="toast"
-      class="fixed bottom-6 left-1/2 -translate-x-1/2 px-5 py-3 rounded-full bg-content text-theme text-sm font-medium shadow-2xl opacity-0 translate-y-3 pointer-events-none transition-all duration-300 z-[70]"
-    ></div>
-
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
