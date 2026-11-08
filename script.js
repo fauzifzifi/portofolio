@@ -8,8 +8,9 @@ const CONFIG = {
   email: "fauzinugraha6822@gmail.com",
   phone: "+62 896 5298 7262",
   whatsapp: "6289652987262",
-  linkedin: "", // contoh: "https://www.linkedin.com/in/username"
-  github: "", // contoh: "https://github.com/username"
+  linkedin:
+    "https://www.linkedin.com/in/fauzi-rafi-abimanyu-nugraha-33a274383?utm_source=share_via", // contoh: "https://www.linkedin.com/in/username"
+  github: "https://github.com/fauzifzifi", // contoh: "https://github.com/username"
 };
 
 /* ---------- 2. Teks antarmuka (ID / EN) ---------- */
