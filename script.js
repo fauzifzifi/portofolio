@@ -27,7 +27,7 @@ const I18N = {
     hero_role:
       "Full Stack Developer · Database Architect · QA Tester · IT Support & Operational Leadership",
     hero_intro:
-      "Menciptakan sistem digital yang andal mulai dari arsitektur basis data yang kokoh hingga antarmuka pengguna yang responsif dan mudah diakses. Menjembatani ketelitian rekayasa dengan kesederhanaan desain yang bijaksana.",
+      "Crafting dependable digital systems from robust database architectures to responsive, accessible user interfaces. Bridging engineering rigor with thoughtful design simplicity.",
     btn_projects: "Lihat proyek",
     btn_contact: "Hubungi saya",
     btn_cv: "Unduh CV",
@@ -78,9 +78,10 @@ const I18N = {
     nav_contact: "Contact",
 
     hero_eyebrow: "Hi, I'm",
-    hero_role: "Informatics Engineering Student · Full Stack & Databases",
+    hero_role:
+      "Full Stack Developer · Database Architect · QA Tester · IT Support & Operational Leadership",
     hero_intro:
-      "I build websites and design databases, and I'm used to solving problems anywhere from hardware to application level.",
+      "Crafting dependable digital systems from robust database architectures to responsive, accessible user interfaces. Bridging engineering rigor with thoughtful design simplicity.",
     btn_projects: "See projects",
     btn_contact: "Get in touch",
     btn_cv: "Download CV",
