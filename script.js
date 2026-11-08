@@ -24,9 +24,10 @@ const I18N = {
     nav_contact: "Kontak",
 
     hero_eyebrow: "Halo, saya",
-    hero_role: "Mahasiswa Teknik Informatika · Full Stack & Basis Data",
+    hero_role:
+      "Full Stack Developer · Database Architect · QA Tester · IT Support & Operational Leadership",
     hero_intro:
-      "Saya membangun website dan merancang basis data, dan terbiasa memecahkan masalah dari sisi perangkat keras sampai aplikasi.",
+      "Menciptakan sistem digital yang andal mulai dari arsitektur basis data yang kokoh hingga antarmuka pengguna yang responsif dan mudah diakses. Menjembatani ketelitian rekayasa dengan kesederhanaan desain yang bijaksana.",
     btn_projects: "Lihat proyek",
     btn_contact: "Hubungi saya",
     btn_cv: "Unduh CV",
@@ -462,7 +463,7 @@ const PROJECTS = [
       ],
     },
     tags: ["Front-end", "Back-end", "Project Management"],
-    url: "",
+    url: "https://pameran-jti.polije.ac.id/product/410/decha-booth",
   },
   {
     name: "Aplikasi Dapur Kuliner Pak Ndut",
@@ -491,7 +492,7 @@ const PROJECTS = [
       ],
     },
     tags: ["MySQL", "Database Design", "Black-box Testing"],
-    url: "",
+    url: "https://pameran-jti.polije.ac.id/pameran/product/589/aplikasi-dapur-kuliner-pak-ndut",
   },
 ];
 
@@ -501,61 +502,61 @@ const CERTS = [
     name: "LKMM - TD",
     issuer: "HMJ Teknologi Informasi Politeknik Negeri Jember",
     date: { id: "April 2026", en: "April 2026" },
-    url: "",
+    url: "https://drive.google.com/file/d/1Pbca3rWD_Eg_IaOEaXvJxYz0pCstNYWL/view?usp=sharing",
   },
   {
     name: "Belajar Dasar Visualisasi Data",
     issuer: "Dicoding Indonesia",
     date: { id: "Oktober 2025", en: "October 2025" },
-    url: "",
+    url: "https://drive.google.com/file/d/16LO7Svcbuy9P6t1gjgThoWd3zi68sTGb/view?usp=drive_link",
   },
   {
     name: "Belajar Dasar Structured Query Language (SQL)",
     issuer: "Dicoding Indonesia",
     date: { id: "Oktober 2025", en: "October 2025" },
-    url: "",
+    url: "https://drive.google.com/file/d/18Drf2ceEf5fxEcn6ShtZn98GanhmcapX/view?usp=drive_link",
   },
   {
     name: "Belajar Dasar Data Science",
     issuer: "Dicoding Indonesia",
     date: { id: "Oktober 2025", en: "October 2025" },
-    url: "",
+    url: "https://drive.google.com/file/d/19fTb42vz6xVzdAzpeQEB8Y_QX9O-2ktZ/view?usp=drive_link",
   },
   {
     name: "Belajar Dasar Generative AI",
     issuer: "Dicoding Indonesia",
     date: { id: "Oktober 2025", en: "October 2025" },
-    url: "",
+    url: "https://drive.google.com/file/d/1NQc-ucEruHWESoatzVGzZAW8pLlOLbkg/view?usp=drive_link",
   },
   {
     name: "LKMM - Pra TD",
     issuer: "HMJ Teknologi Informasi Politeknik Negeri Jember",
     date: { id: "Oktober 2025", en: "October 2025" },
-    url: "",
+    url: "https://drive.google.com/file/d/19AVrAVgV1nEj-8aRoT_w-ObJTIXlILy2/view?usp=sharing",
   },
   {
     name: "Prompt Engineer untuk Software Developer",
     issuer: "Dicoding Indonesia",
     date: { id: "September 2025", en: "September 2025" },
-    url: "",
+    url: "https://drive.google.com/file/d/1uW-6Ob31KdJ7SfzbyWaoKOlwpA_NNG08/view?usp=drive_link",
   },
   {
     name: "Belajar Dasar AI",
     issuer: "Dicoding Indonesia",
     date: { id: "September 2025", en: "September 2025" },
-    url: "",
+    url: "https://drive.google.com/file/d/1Gw0UJNATThAwWc6ewQqGftmz69VJXoaw/view?usp=drive_link",
   },
   {
     name: "Uji Kompetensi Keahlian - Teknik Komputer & Jaringan",
     issuer: "SMKS PGRI 1 Nganjuk",
     date: { id: "Maret 2025", en: "March 2025" },
-    url: "",
+    url: "https://drive.google.com/drive/folders/18XIfl8hEWID0AYsoUHYUs5eXhHRh4HVm?usp=drive_link",
   },
   {
     name: "Praktik Kerja Lapangan",
     issuer: "Prasasti Computer Nganjuk",
     date: { id: "November 2024", en: "November 2024" },
-    url: "",
+    url: "https://drive.google.com/file/d/16X7ZK0StEvb9CDhdQOLCufYHpe1npy6Q/view?usp=sharing",
   },
 ];
 
